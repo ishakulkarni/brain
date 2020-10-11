@@ -1,13 +1,16 @@
 % creating nodes according to surface file
-dfsfile = readdfs('E:\_USC Courses\Brainsuite\_BrainNetViewer_20191031\Data\surface2523412leftmidcortexsvreg.dfs');
+dfsfile = readdfs('E:\_USC Courses\Brainsuite\_BrainNetViewer_20191031\Data\bci32kleft.dfs');
 v = dfsfile.vertices;
 f = dfsfile.faces;
-labels = dfsfile.labels;
+labelfile = load('BCI-DNI_brain_grayordinate_labels.mat');
+labels = labelfile.labels(1:32000); %left
 labelnames = unique(labels);
 
 means_x = [];
 means_y = [];
 means_z = [];
+node_size= [];
+node_colors=[];
 for i =1: length(labelnames)
      x = [];
      y = [];
@@ -25,16 +28,13 @@ for i =1: length(labelnames)
     means_y = [means_y,mean(y)];
     means_z = [means_z,mean(z)];
     
+    node_colors = [node_colors, i];
+    node_size = [node_size, 3];
+    
 end
 
-nodehorz = [means_x; means_y; means_z];
+nodehorz = [means_x; means_y; means_z; node_colors; node_size];
+
 nodes = nodehorz.';
 
-writematrix(nodes,'mynodes.txt','Delimiter',' ') 
-
-map= []
-for i=1:length(labelnames)
-    map=[map, i]
-end
-
-writematrix(map,'mymap.txt','Delimiter',' ')
+writematrix(nodes,'bci32kleftnodes.txt','Delimiter',' ') 
