@@ -1,9 +1,10 @@
+%Author: Isha Shrikant Kulkarni, University of Southern California 2020
 % creating nodes according to surface file
-dfsfile = readdfs('E:\_USC Courses\Brainsuite\_BrainNetViewer_20191031\Data\bci32kleft.dfs');
+dfsfile = readdfs('E:\_USC Courses\Brainsuite\_BrainNetViewer_20191031\Data\bci32kright.dfs');
 v = dfsfile.vertices;
 f = dfsfile.faces;
 labelfile = load('BCI-DNI_brain_grayordinate_labels.mat');
-labels = labelfile.labels(1:32000); %left
+labels = labelfile.labels(32001:64000); %right
 labelnames = unique(labels);
 
 means_x = [];
@@ -37,4 +38,4 @@ nodehorz = [means_x; means_y; means_z; node_colors; node_size];
 
 nodes = nodehorz.';
 
-writematrix(nodes,'bci32kleftnodes.txt','Delimiter',' ') 
+writematrix(nodes,'bci32krightnodes.txt','Delimiter',' ') 

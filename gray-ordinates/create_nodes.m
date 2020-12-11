@@ -1,16 +1,15 @@
+%Author: Isha Shrikant Kulkarni, University of Southern California 2020
 % creating nodes according to surface file
-dfsfile = readdfs('E:\_USC Courses\Brainsuite\_BrainNetViewer_20191031\Data\bci32kright.dfs');
+dfsfile = readdfs('E:\_USC Courses\Brainsuite\_BrainNetViewer_20191031\Data\bci32kleft.dfs');
 v = dfsfile.vertices;
 f = dfsfile.faces;
-labelfile = load('BCI-DNI_brain_grayordinate_labels.mat');
-labels = labelfile.labels(32001:64000); %right
+labels = dfsfile.labels;
 labelnames = unique(labels);
 
 means_x = [];
 means_y = [];
 means_z = [];
 node_size= [];
-node_colors=[];
 for i =1: length(labelnames)
      x = [];
      y = [];
@@ -27,14 +26,20 @@ for i =1: length(labelnames)
     means_x = [means_x,mean(x)];
     means_y = [means_y,mean(y)];
     means_z = [means_z,mean(z)];
-    
-    node_colors = [node_colors, i];
-    node_size = [node_size, 3];
-    
+    node_size = [node_size, 4];
 end
 
-nodehorz = [means_x; means_y; means_z; node_colors; node_size];
+% node_colors=
+
+nodehorz = [means_x; means_y; means_z];
 
 nodes = nodehorz.';
 
-writematrix(nodes,'bci32krightnodes.txt','Delimiter',' ') 
+writematrix(nodes,'bci32kleftnodes.txt','Delimiter',' ') 
+
+% map= []
+% for i=1:length(labelnames)
+%     map=[map, i]
+% end
+% 
+% writematrix(map,'mymap.txt','Delimiter',' ')
