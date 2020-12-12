@@ -8,14 +8,26 @@ BrainNet Viewer, a graph-based brain network mapping tool, developed by Xia M, W
 Modified by Isha Kulkarni
 
 Steps to execute:
-1) run gray-ordinates/bci_gray_final_nodes.mat file to create nodes from desired surface file.
-Here surface file used is bci32ksurface.dfs
+1)Open gray-ordinates/bci_gray_final_nodes.m in matlab. Provide absolute path to your surface file.
+Currently, surface file used is: bci32ksurface.dfs
+Run to create nodes.
 
-2)Run Brainnet.m
-Provide  bci32ksurface.dfs as surface file
-bciAllnodes aas node file 
+2)open create_edges.m
+provide absolute path of node file.
+Run code to create edge file.
+
+You can skip this step 1 & 2 if you already have surface, node and edge files ready.
+
+3)Run brainnet/Brainnet.m
+A window pops up.
+Provide  your desired surface file path. (select dfs file format from drop down menu while selecting dfs file)
+Provide node file path. (select (*.all files) as a file format from drop down menu while selecting node and edge files)
+Provide edge file path if required.
 Click next
-Go to nodes tab and select colormap= jet option
 
-3)You can greate edges from any node file using create_edges.
+In the next window
+In the first tab, select layout (I mostly opt for a full view)
+Go to nodes tab and select colormap= jet option if you want to see colourful nodes
+Do to edges tab and select colormap= jet if you have color coded edges.
+Click OK
 
