@@ -17,6 +17,7 @@ provide absolute path of node file.
 Run code to create edge file.
 
 You can skip this step 1 & 2 if you already have surface, node and edge files ready.
+Or you can go to folder gray-ordinates and use bci32ksurface.dfs as surface file and bciALLnodes.txt as node file to run Brainnet viewer.
 
 3)Run brainnet/Brainnet.m
 A window pops up.
