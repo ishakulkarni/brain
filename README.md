@@ -1,11 +1,10 @@
 # brain
 
+Written by Isha Kulkarni under guidance of Prof. Anand Joshi, University of Southern California.
+
 tool used for visualization:
 https://www.nitrc.org/project/list_screenshots.php?group_id=504&screenshot_id=710 
-
 BrainNet Viewer, a graph-based brain network mapping tool, developed by Xia M, Wang J, He Y(2013)
-
-Modified by Isha Kulkarni under guidance of Prof. Anand Joshi, University of Southern California.
 
 Steps to execute:
 1)Open gray-ordinates/bci_gray_final_nodes.m in matlab. Provide absolute path to your surface file.
