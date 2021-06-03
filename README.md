@@ -1,6 +1,9 @@
 # brain
 
-Written by Isha Kulkarni under guidance of Prof. Anand Joshi, University of Southern California.
+Written by Isha Kulkarni under guidance of Prof. Anand Joshi, Signal and Image Processing Institute, University of Southern California.
+
+•	Added support for brain region connectivity visualization in 3D format to BrainSuite software. 
+•	Programmed for brain surface and gray-ordinates extracted from a MRI scan. 
 
 tool used for visualization:
 https://www.nitrc.org/project/list_screenshots.php?group_id=504&screenshot_id=710 
