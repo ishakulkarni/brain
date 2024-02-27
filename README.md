@@ -1,11 +1,12 @@
 # Brain Data Visualization (3D)
 
 •	Added support for brain region connectivity visualization in 3D format to BrainSuite software. 
+
 •	Programmed for brain surface and gray-ordinates extracted from a MRI scan. 
 
 Created by Isha Kulkarni under guidance of Prof. Anand Joshi, Signal and Image Processing Institute, University of Southern California.
 
-tool used for visualization:
+Tool used for visualization:
 https://www.nitrc.org/project/list_screenshots.php?group_id=504&screenshot_id=710 
 BrainNet Viewer, a graph-based brain network mapping tool, developed by Xia M, Wang J, He Y(2013)
 
